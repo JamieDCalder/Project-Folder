@@ -12,19 +12,18 @@
     <div class="container p-3 mb-2 bg-secondary text-white d-flex justify-content-evenly gap-5">
     <h1>Everbody's Workouts</h1>
     <h2>Welcome {{one_user.first_name}}</h2>
-    <a href="/workout/new">New Journal Entry</a> 
+    <a href="/workout/new"><button  class="btn btn-dark">New Journal Entry</button></a> 
     | 
-    <a href="/users/edit/{{one_user.id}}">Edit Profile</a>
+    <a href="/users/edit/{{one_user.id}}"><button  class="btn btn-dark">Edit Profile</button></a>
     | 
-    <a href="/logout">Logout</a>
+    <a href="/logout"><button  class="btn btn-dark">Logout</button></a>
     </div>
 
-    <h3 class="container p-3 mb-2 bg-secondary text-white col-8 d-flex p-2">All Workouts</h3>
             
     <div class="container">
         {% for workout in workouts %}
                 <div class="card">
-                <div class="card-body bg-secondary text-white col-auto d-flex p-2 gap-5">
+                <div class="card-body bg-dark text-white col-auto d-flex p-2 gap-5">
                     <div>
                         <p>Total Pump Ups Recieved</p>
                         <p>0</p>
@@ -61,10 +60,10 @@
                             {% endif %}
                     </div>
                     <div>
-                        <button class="btn btn-dark">Send Pump Up</button>
+                        <button class="btn btn-secondary">Send Pump Up</button>
                         {% if session['user_id'] == workout.athlete.id %}
-                            <a href="/workouts/edit/{{workout.id}}">Edit</a>
-                            <a href="/workouts/delete/{{workout.id}}">Delete</a>
+                            <a href="/workouts/edit/{{workout.id}}"><button class="btn btn-warning">Edit</button></a>
+                            <a href="/workouts/delete/{{workout.id}}"><button class="btn btn-danger">Delete</button></a>
                         {% endif %}
                     </div>
                 </div>
